@@ -17,11 +17,15 @@ class AuthorTest < Minitest::Test
     assert_equal "Charlotte Bronte", charlotte_bronte.name
   end
 
+# I am not sure how you can assert this without having a variable assigned...
   def test_it_can_write_books
     charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
 
     assert_equal [], charlotte_bronte.books
+    jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    villette = charlotte_bronte.write("Villette", "1853")
 
+    assert_equal [jane_eyre, villette], charlotte_bronte.books
   end
 
 end
