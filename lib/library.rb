@@ -25,7 +25,18 @@ class Library
     result
   end
 
-  def checkout(book)
-    @books.include?(book)
-  end
+  # def checkout(book)
+  #   if @books.include?(book) && book.checked_out = false
+  #     true
+  #   else
+  #     book.checked_out = true
+  #     false
+  #   end
+  # end
+
+  # def checked_out_books
+  #   @books.find_all do |book|
+  #     checkout(book)
+  #   end
+  # end
 end
