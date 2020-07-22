@@ -24,4 +24,8 @@ class Library
       result[:end] = ending
     result
   end
+
+  def checkout(book)
+    @books.include?(book)
+  end
 end

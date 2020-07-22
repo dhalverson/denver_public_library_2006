@@ -67,12 +67,14 @@ class LibraryTest < Minitest::Test
   end
 
   def test_it_can_checkout_book
-    pry(main)> dpl = Library.new("Denver Public Library")
-    pry(main)> charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})    
-    pry(main)> jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
-    pry(main)> villette = charlotte_bronte.write("Villette", "1853")
-    pry(main)> harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
-    pry(main)> mockingbird = harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
+    dpl = Library.new("Denver Public Library")
+    charlotte_bronte = Author.new({first_name: "Charlotte", last_name: "Bronte"})
+    jane_eyre = charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    villette = charlotte_bronte.write("Villette", "1853")
+    harper_lee = Author.new({first_name: "Harper", last_name: "Lee"})
+    mockingbird = harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
+
+    assert_equal false, dpl.checkout(mockingbird)
   end
 
 end
